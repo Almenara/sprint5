@@ -6,6 +6,7 @@ const header = {
         'Accept': 'application/json'
     },
 };
+let jokeText = document.getElementById('joke-text');
 let scoringButtons = document.getElementById('scoring-buttons');
 let nextJokeButton = document.getElementById('next-joke-button');
 let weatherIcon = document.getElementById('weather-icon');
@@ -26,7 +27,9 @@ const getJoke = () => {
     })
         .then((request) => {
         currentJoke = request.joke;
-        document.getElementById('joke-text').innerHTML = currentJoke;
+        jokeText.innerHTML = currentJoke;
+        jokeText.removeAttribute('class');
+        jokeText.classList.add(`font-${Math.floor(Math.random() * (5 - 0 + 1) + 0)}`);
         nextJokeButton === null || nextJokeButton === void 0 ? void 0 : nextJokeButton.classList.add('d-none');
         scoringButtons === null || scoringButtons === void 0 ? void 0 : scoringButtons.classList.remove('d-none');
         nextJokeButton === null || nextJokeButton === void 0 ? void 0 : nextJokeButton.removeAttribute('disabled');

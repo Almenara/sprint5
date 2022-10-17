@@ -6,6 +6,7 @@ const header:object ={
   },
 }
 
+let jokeText: HTMLElement|null = document.getElementById('joke-text');
 let scoringButtons: HTMLElement|null = document.getElementById('scoring-buttons');
 let nextJokeButton: HTMLElement|null = document.getElementById('next-joke-button');
 let weatherIcon: HTMLElement|null = document.getElementById('weather-icon');
@@ -32,7 +33,9 @@ const getJoke = () => {
   .then((request) => {
 
     currentJoke = request.joke;
-    document.getElementById('joke-text')!.innerHTML = currentJoke;
+    jokeText!.innerHTML = currentJoke;
+    jokeText!.removeAttribute('class');
+    jokeText!.classList.add(`font-${Math.floor(Math.random() * (5 - 0 + 1) + 0)}`)
     nextJokeButton?.classList.add('d-none');
     scoringButtons?.classList.remove('d-none');
     nextJokeButton?.removeAttribute('disabled');
