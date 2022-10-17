@@ -10771,7 +10771,10 @@ textarea.form-control-lg {
     display: none !important;
   }
 }
-body > .container-fluid, body > .container-sm, body > .container-md, body > .container-lg, body > .container-xl, body > .container-xxl {
+body {
   min-height: 100vh;
   background-color: #DDD;
+}
+body nav h1, body nav .h1 {
+  margin: 0;
 }/*# sourceMappingURL=style.css.map */

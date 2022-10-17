@@ -1,5 +1,8 @@
 @import "../../node_modules/bootstrap/scss/bootstrap";
-body > .container-fluid{
+body{
     min-height: 100vh;
     background-color: #DDD;
+    nav h1{
+        margin: 0;
+    }
 }
