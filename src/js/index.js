@@ -1,5 +1,5 @@
 "use strict";
-const urlJoke = "https://icanhazdadjoke.com/dsf";
+const urlJoke = "https://icanhazdadjoke.com/";
 const header = {
     method: 'get',
     headers: {
@@ -10,6 +10,7 @@ const getJoke = () => {
     fetch(urlJoke, header)
         .then((resolve) => {
         if (resolve.ok) {
+            let joke;
             return resolve.json();
         }
         throw {
@@ -17,6 +18,8 @@ const getJoke = () => {
             status: resolve.status
         };
     })
-        .then((request) => console.log(request.joke))
+        .then((request) => {
+        document.getElementById('joke-text').innerHTML = request.joke;
+    })
         .catch((reject) => console.log(reject));
 };

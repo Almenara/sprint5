@@ -1,4 +1,4 @@
-const urlJoke:string = "https://icanhazdadjoke.com/dsf";
+const urlJoke:string = "https://icanhazdadjoke.com/";
 const header:object ={
   method: 'get',
   headers: {
@@ -6,10 +6,12 @@ const header:object ={
   },
 }
 
-const getJoke = ():void => { 
+const getJoke = () => { 
   fetch(urlJoke,header)
   .then((resolve) => {
     if (resolve.ok) {
+      
+      let joke:string; 
       return resolve.json();
     }
     throw {
@@ -17,6 +19,8 @@ const getJoke = ():void => {
       status: resolve.status
     };
   })
-  .then((request) => console.log(request.joke))
+  .then((request) => {
+    document.getElementById('joke-text')!.innerHTML = request.joke;
+  })
   .catch((reject) => console.log(reject));
 }
