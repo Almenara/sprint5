@@ -5,6 +5,7 @@
  * Copyright 2011-2022 Twitter, Inc.
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/main/LICENSE)
  */
+@import url("https://fonts.googleapis.com/css2?family=Fuzzy+Bubbles&family=Mali:wght@500&family=Pacifico&family=Praise&family=Rochester&family=Send+Flowers&display=swap");
 :root {
   --bs-blue: #0d6efd;
   --bs-indigo: #6610f2;
@@ -10771,7 +10772,37 @@ textarea.form-control-lg {
     display: none !important;
   }
 }
-body > .container-fluid, body > .container-sm, body > .container-md, body > .container-lg, body > .container-xl, body > .container-xxl {
+body {
   min-height: 100vh;
   background-color: #DDD;
+}
+body nav h1, body nav .h1 {
+  margin: 0;
+}
+body #joke-text {
+  text-align: center;
+}
+
+.font-0 {
+  font-family: "Fuzzy Bubbles", cursive;
+}
+
+.font-1 {
+  font-family: "Mali", cursive;
+}
+
+.font-2 {
+  font-family: "Pacifico", cursive;
+}
+
+.font-3 {
+  font-family: "Praise", cursive;
+}
+
+.font-4 {
+  font-family: "Rochester", cursive;
+}
+
+.font-5 {
+  font-family: "Send Flowers", cursive;
 }/*# sourceMappingURL=style.css.map */
