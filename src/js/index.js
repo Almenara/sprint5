@@ -30,7 +30,6 @@ const getJoke = () => {
         currentJoke = request.joke;
         jokeText.innerHTML = currentJoke;
         jokeText.removeAttribute('class');
-        nextJokeButton === null || nextJokeButton === void 0 ? void 0 : nextJokeButton.classList.add('d-none');
         scoringButtons === null || scoringButtons === void 0 ? void 0 : scoringButtons.classList.remove('d-none');
         nextJokeButton === null || nextJokeButton === void 0 ? void 0 : nextJokeButton.removeAttribute('disabled');
     })
@@ -42,7 +41,6 @@ const getJoke = () => {
 const jokeScore = (score) => {
     reportJokes.push({ joke: currentJoke, score: score, date: new Date().toISOString() });
     scoringButtons === null || scoringButtons === void 0 ? void 0 : scoringButtons.classList.add('d-none');
-    nextJokeButton === null || nextJokeButton === void 0 ? void 0 : nextJokeButton.classList.remove('d-none');
     console.log(reportJokes);
 };
 let urlWeater = "https://icanhazdadjoke.com/";
@@ -64,7 +62,7 @@ let getWeather = () => {
     })
         .then((request) => {
         console.log(request.current_weather);
-        weatherIcon.setAttribute('src', `/src/img/${request.current_weather.weathercode}.svg`);
+        weatherIcon.setAttribute('src', `src/img/${request.current_weather.weathercode}.svg`);
         temperature.innerHTML = request.current_weather.temperature;
     })
         .catch((reject) => console.error(reject));

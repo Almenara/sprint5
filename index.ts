@@ -36,7 +36,6 @@ const getJoke = () => {
     currentJoke = request.joke;
     jokeText!.innerHTML = currentJoke;
     jokeText!.removeAttribute('class');
-    nextJokeButton?.classList.add('d-none');
     scoringButtons?.classList.remove('d-none');
     nextJokeButton?.removeAttribute('disabled');
 
@@ -52,7 +51,6 @@ const jokeScore = (score:number) => {
   
   reportJokes.push({joke: currentJoke, score: score, date: new Date().toISOString()})
   scoringButtons?.classList.add('d-none');
-  nextJokeButton?.classList.remove('d-none');
   console.log(reportJokes);
 
 }
@@ -80,7 +78,7 @@ let getWeather = () =>{
   .then((request) => {
     
     console.log(request.current_weather);
-    weatherIcon!.setAttribute('src', `/src/img/${request.current_weather.weathercode}.svg`);
+    weatherIcon!.setAttribute('src', `src/img/${request.current_weather.weathercode}.svg`);
     temperature!.innerHTML = request.current_weather.temperature;
     
   })
