@@ -1,4 +1,4 @@
-const urlJoke:string = "https://icanhazdadjoke.com/";
+const urlJoke:string[] = ["https://icanhazdadjoke.com/", "https://v2.jokeapi.dev/joke/Any?lang=es&type=single"];
 const header:object ={
   method: 'get',
   headers: {
@@ -18,8 +18,9 @@ let reportJokes:object[] = [];
 const getJoke = () => { 
 
   nextJokeButton?.setAttribute('disabled', '');
-
-  fetch(urlJoke,header)
+  let url:string = urlJoke[Math.floor(Math.random() * (1- 0 + 1) + 0)]
+  
+  fetch(url,header)
   .then((resolve) => {
     if (resolve.ok) {    
       return resolve.json();
@@ -35,7 +36,6 @@ const getJoke = () => {
     currentJoke = request.joke;
     jokeText!.innerHTML = currentJoke;
     jokeText!.removeAttribute('class');
-    jokeText!.classList.add(`font-${Math.floor(Math.random() * (5 - 0 + 1) + 0)}`)
     nextJokeButton?.classList.add('d-none');
     scoringButtons?.classList.remove('d-none');
     nextJokeButton?.removeAttribute('disabled');

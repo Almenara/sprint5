@@ -1,5 +1,4 @@
 @import "../../node_modules/bootstrap/scss/bootstrap";
-@import url('https://fonts.googleapis.com/css2?family=Fuzzy+Bubbles&family=Mali:wght@500&family=Pacifico&family=Praise&family=Rochester&family=Send+Flowers&display=swap');
 body{
     min-height: 100vh;
     background-color: #DDD;
@@ -9,23 +8,4 @@ body{
     #joke-text{
         text-align: center;
     }
-}
-
-.font-0{
-    font-family: 'Fuzzy Bubbles', cursive;
-}
-.font-1{
-    font-family: 'Mali', cursive;
-}
-.font-2{
-    font-family: 'Pacifico', cursive;
-}
-.font-3{
-    font-family: 'Praise', cursive;
-}
-.font-4{
-    font-family: 'Rochester', cursive;
-}
-.font-5{
-    font-family: 'Send Flowers', cursive;
 }
