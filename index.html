@@ -11,7 +11,7 @@
     <nav class="navbar navbar-expand-lg">
         <div class="row">
             <div id="weather" class="col-12 d-flex justify-content-center">
-                <img id="weather-icon" src="/src/img/0.svg" alt="Weather graphics">
+                <img id="weather-icon" src="src/img/0.svg" alt="Weather graphics">
                 <h1 class="d-flex align-items-center"><span id="temperature"></span>º</h1>
             </div>
         </div>
@@ -25,12 +25,12 @@
                 <div class="card-text">
                     <h4 id="joke-text"></h4>
                 </div>
-                <div id="scoring-buttons" class="d-flex d-none justify-content-around">
+                <div id="scoring-buttons" class="d-flex d-none justify-content-around mt-5">
                     <button class="btn btn-danger" onclick="jokeScore(1);"> :( </button>
                     <button class="btn btn-warning" onclick="jokeScore(2);"> :\ </button>
                     <button class="btn btn-success" onclick="jokeScore(3);"> :) </button>
                 </div>
-                <div class="d-flex justify-content-center">
+                <div class="d-flex justify-content-center mt-5">
                     <button id="next-joke-button" class="btn btn-primary" onclick="getJoke();">Siguiente chiste</button>
                 </div>
             </div>
